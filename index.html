@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Money Machine — 100+ Ways to Make Money with AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#04040a;
+--s1:#080810;
+--s2:#0e0e1a;
+--s3:#141424;
+--gold:#f5c842;
+--gold2:#e8a820;
+--gold3:#ffd700;
+--silver:#c0c8d8;
+--silver2:#8892a4;
+--silver3:#e8edf5;
+--blue:#3b82f6;
+--blue2:#60a5fa;
+--blue3:#1d4ed8;
+--purple:#8b5cf6;
+--purple2:#a78bfa;
+--purple3:#6d28d9;
+--border:rgba(255,255,255,0.06);
+--border2:rgba(255,255,255,0.12);
+--text:#f0f0f8;
+--muted:#6b7280;
+--font:'Satoshi',sans-serif;
+--head:'Clash Display',sans-serif;
+--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden}
+
+/* STARS BG */
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(245,200,66,0.4) 0%,transparent 100%),radial-gradient(1px 1px at 30% 60%,rgba(139,92,246,0.3) 0%,transparent 100%),radial-gradient(1px 1px at 70% 10%,rgba(192,200,216,0.3) 0%,transparent 100%),radial-gradient(1px 1px at 85% 80%,rgba(59,130,246,0.3) 0%,transparent 100%),radial-gradient(1px 1px at 50% 40%,rgba(245,200,66,0.2) 0%,transparent 100%),radial-gradient(1px 1px at 20% 85%,rgba(139,92,246,0.2) 0%,transparent 100%);pointer-events:none;z-index:0}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(4,4,10,0.95);backdrop-filter:blur(20px);z-index:100;position:relative}
+.logo{font-family:var(--head);font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--silver),var(--purple2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.5px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:0.5px;transition:color 0.2s;font-family:var(--mono)}
+.nav-links a:hover{color:var(--gold)}
+.nav-pill{font-size:11px;padding:8px 20px;border-radius:30px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;font-weight:700;letter-spacing:0.5px;text-decoration:none;font-family:var(--mono)}
+
+/* HERO */
+.hero{padding:100px 48px 80px;text-align:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-family:var(--mono);letter-spacing:2px;color:var(--gold);border:1px solid rgba(245,200,66,0.25);background:rgba(245,200,66,0.05);padding:8px 20px;border-radius:30px;margin-bottom:36px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:glow 2s infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 4px var(--gold)}50%{box-shadow:0 0 12px var(--gold)}}
+.hero h1{font-family:var(--head);font-size:clamp(40px,7vw,88px);font-weight:700;line-height:1.0;letter-spacing:-3px;margin-bottom:28px}
+.hero h1 .g{background:linear-gradient(135deg,var(--gold3),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .s{background:linear-gradient(135deg,var(--silver3),var(--silver));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .p{background:linear-gradient(135deg,var(--purple2),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--silver2);max-width:600px;margin:0 auto 56px;line-height:1.8}
+.hero-nums{display:inline-flex;gap:1px;background:var(--border);border:1px solid var(--border2);border-radius:20px;overflow:hidden;margin-bottom:0}
+.hero-num{background:var(--s2);padding:20px 36px;text-align:center}
+.hero-num-val{font-family:var(--head);font-size:32px;font-weight:700;letter-spacing:-1px}
+.hero-num-val.gold{background:linear-gradient(135deg,var(--gold3),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-num-val.silver{background:linear-gradient(135deg,var(--silver3),var(--silver));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-num-val.purple{background:linear-gradient(135deg,var(--purple2),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-num-label{font-size:11px;color:var(--muted);margin-top:4px;font-family:var(--mono);letter-spacing:0.5px}
+
+/* DIVIDER */
+.div-line{border:none;border-top:1px solid var(--border);margin:0 48px}
+
+/* SECTION */
+.sec{max-width:1200px;margin:0 auto;padding:80px 48px;position:relative;z-index:1}
+.sec-label{font-size:10px;font-family:var(--mono);letter-spacing:3px;margin-bottom:10px;text-transform:uppercase}
+.sec-label.gold{color:var(--gold)}
+.sec-label.silver{color:var(--silver)}
+.sec-label.blue{color:var(--blue2)}
+.sec-label.purple{color:var(--purple2)}
+.sec-title{font-family:var(--head);font-size:clamp(26px,3vw,44px);font-weight:700;letter-spacing:-1.5px;margin-bottom:14px;line-height:1.15}
+.sec-sub{font-size:14px;color:var(--silver2);max-width:580px;margin-bottom:48px;line-height:1.8}
+
+/* CATEGORY HEADER */
+.cat-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding:20px 24px;border-radius:16px;border-left:3px solid}
+.cat-header.gold{background:rgba(245,200,66,0.05);border-color:var(--gold)}
+.cat-header.silver{background:rgba(192,200,216,0.05);border-color:var(--silver)}
+.cat-header.blue{background:rgba(59,130,246,0.05);border-color:var(--blue)}
+.cat-header.purple{background:rgba(139,92,246,0.05);border-color:var(--purple)}
+.cat-icon{font-size:28px;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-icon.gold{background:rgba(245,200,66,0.1)}
+.cat-icon.silver{background:rgba(192,200,216,0.1)}
+.cat-icon.blue{background:rgba(59,130,246,0.1)}
+.cat-icon.purple{background:rgba(139,92,246,0.1)}
+.cat-info h3{font-family:var(--head);font-size:20px;font-weight:700;letter-spacing:-0.5px;margin-bottom:4px}
+.cat-info p{font-size:13px;color:var(--silver2)}
+.cat-earn{margin-left:auto;text-align:right;flex-shrink:0}
+.cat-earn-val{font-family:var(--head);font-size:18px;font-weight:700}
+.cat-earn-val.gold{color:var(--gold)}
+.cat-earn-val.silver{color:var(--silver)}
+.cat-earn-val.blue{color:var(--blue2)}
+.cat-earn-val.purple{color:var(--purple2)}
+.cat-earn-label{font-size:10px;color:var(--muted);font-family:var(--mono);letter-spacing:0.5px}
+
+/* IDEAS GRID */
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:48px}
+.idea-card{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all 0.2s;cursor:default;position:relative;overflow:hidden}
+.idea-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.idea-card.gold::before{background:linear-gradient(90deg,var(--gold2),var(--gold3))}
+.idea-card.silver::before{background:linear-gradient(90deg,var(--silver2),var(--silver3))}
+.idea-card.blue::before{background:linear-gradient(90deg,var(--blue3),var(--blue2))}
+.idea-card.purple::before{background:linear-gradient(90deg,var(--purple3),var(--purple2))}
+.idea-card:hover{background:var(--s2);border-color:var(--border2);transform:translateY(-2px)}
+.idea-num{font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:10px;letter-spacing:1px}
+.idea-title{font-size:14px;font-weight:700;margin-bottom:6px;letter-spacing:-0.3px;font-family:var(--head)}
+.idea-desc{font-size:12px;color:var(--silver2);line-height:1.65;margin-bottom:12px}
+.idea-footer{display:flex;align-items:center;justify-content:space-between}
+.idea-earn{font-size:12px;font-weight:700;font-family:var(--mono)}
+.idea-earn.gold{color:var(--gold)}
+.idea-earn.silver{color:var(--silver)}
+.idea-earn.blue{color:var(--blue2)}
+.idea-earn.purple{color:var(--purple2)}
+.idea-diff{font-size:10px;padding:3px 8px;border-radius:20px;font-family:var(--mono);letter-spacing:0.3px}
+.diff-easy{background:rgba(34,197,94,0.1);color:#4ade80}
+.diff-med{background:rgba(245,158,11,0.1);color:#fbbf24}
+.diff-hard{background:rgba(239,68,68,0.1);color:#f87171}
+
+/* MEGA TABLE */
+.mega-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--border)}
+.mega-table{width:100%;border-collapse:collapse;font-size:13px}
+.mega-table th{background:var(--s2);padding:14px 18px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap}
+.mega-table td{padding:14px 18px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.mega-table tr:last-child td{border-bottom:none}
+.mega-table tr:hover td{background:var(--s2)}
+.t-name{font-weight:600;font-size:13px}
+.t-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;font-family:var(--mono);margin-top:4px}
+.b-gold{background:rgba(245,200,66,0.1);color:var(--gold)}
+.b-silver{background:rgba(192,200,216,0.1);color:var(--silver)}
+.b-blue{background:rgba(59,130,246,0.1);color:var(--blue2)}
+.b-purple{background:rgba(139,92,246,0.1);color:var(--purple2)}
+.b-green{background:rgba(34,197,94,0.1);color:#4ade80}
+
+/* QUOTE BLOCKS */
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:48px}
+.quote-card{border-radius:16px;padding:28px;border:1px solid}
+.quote-card.gold{background:rgba(245,200,66,0.04);border-color:rgba(245,200,66,0.2)}
+.quote-card.silver{background:rgba(192,200,216,0.04);border-color:rgba(192,200,216,0.2)}
+.quote-card.purple{background:rgba(139,92,246,0.04);border-color:rgba(139,92,246,0.2)}
+.quote-card.blue{background:rgba(59,130,246,0.04);border-color:rgba(59,130,246,0.2)}
+.quote-num{font-family:var(--head);font-size:48px;font-weight:700;letter-spacing:-3px;line-height:1;margin-bottom:8px}
+.quote-num.gold{background:linear-gradient(135deg,var(--gold3),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.quote-num.silver{background:linear-gradient(135deg,var(--silver3),var(--silver));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.quote-num.purple{background:linear-gradient(135deg,var(--purple2),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.quote-num.blue{background:linear-gradient(135deg,var(--blue2),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.quote-text{font-size:14px;color:var(--silver2);line-height:1.7}
+.quote-text strong{color:var(--text);font-weight:600}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:60px 48px;text-align:center;position:relative;z-index:1}
+.footer-logo{font-family:var(--head);font-size:28px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--silver),var(--purple2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+footer p{font-size:13px;color:var(--muted)}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}.nav-links{display:none}
+  .hero{padding:70px 20px 60px}.hero h1{letter-spacing:-2px}
+  .sec{padding:60px 20px}.div-line{margin:0 20px}
+  .hero-nums{flex-direction:column;width:100%}
+  .cat-earn{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">💰 AI Money Machine</div>
+  <div class="nav-links">
+    <a href="#freelance">Freelance</a>
+    <a href="#content">Content</a>
+    <a href="#products">Products</a>
+    <a href="#saas">SaaS</a>
+    <a href="#agency">Agency</a>
+    <a href="#passive">Passive</a>
+  </div>
+  <a class="nav-pill" href="#ideas">ALL IDEAS ↓</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">THE ULTIMATE AI MONEY GUIDE 2025</div>
+  <h1>
+    <span class="g">Make Money</span><br>
+    <span class="s">With</span> <span class="p">Artificial</span><br>
+    <span class="g">Intelligence</span>
+  </h1>
+  <p class="hero-sub">100+ proven, actionable ways to earn money using AI — from $100/day freelance gigs to $100K/month SaaS products. Every model, every niche, every income level.</p>
+  <div class="hero-nums">
+    <div class="hero-num">
+      <div class="hero-num-val gold">100+</div>
+      <div class="hero-num-label">money ideas</div>
+    </div>
+    <div class="hero-num">
+      <div class="hero-num-val silver">$100</div>
+      <div class="hero-num-label">to start</div>
+    </div>
+    <div class="hero-num">
+      <div class="hero-num-val purple">$50K+</div>
+      <div class="hero-num-label">monthly potential</div>
+    </div>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- FREELANCE -->
+<div class="sec" id="freelance">
+  <div class="sec-label gold">01 — freelance services</div>
+  <h2 class="sec-title">Sell AI-Powered Services</h2>
+  <p class="sec-sub">The fastest path to income — offer services enhanced by AI. Charge human rates, deliver at machine speed.</p>
+
+  <div class="cat-header gold">
+    <div class="cat-icon gold">✍️</div>
+    <div class="cat-info">
+      <h3>AI Writing & Content</h3>
+      <p>Write faster, earn more — AI as your co-writer</p>
+    </div>
+    <div class="cat-earn">
+      <div class="cat-earn-val gold">$50–$300/hr</div>
+      <div class="cat-earn-label">typical rate</div>
+    </div>
+  </div>
+  <div class="ideas-grid">
+    <div class="idea-card gold">
+      <div class="idea-num">#001</div>
+      <div class="idea-title">Blog Writing Service</div>
+      <div class="idea-desc">Use Claude/GPT to write SEO blogs 5x faster. Charge $150–$500 per article and deliver same-day.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$3K–$15K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#002</div>
+      <div class="idea-title">Email Marketing Copy</div>
+      <div class="idea-desc">Write high-converting email sequences for businesses. Use AI to A/B test subject lines and body copy.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$500–$3K/sequence</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#003</div>
+      <div class="idea-title">LinkedIn Ghostwriting</div>
+      <div class="idea-desc">Write viral LinkedIn posts for executives and founders. Charge $1K–$5K/month as a retainer service.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$5K–$20K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#004</div>
+      <div class="idea-title">Product Descriptions</div>
+      <div class="idea-desc">E-commerce stores need thousands of product descriptions. AI lets you write 100+ per day effortlessly.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$2–$10/description</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#005</div>
+      <div class="idea-title">Press Release Writing</div>
+      <div class="idea-desc">Companies pay $300–$1,500 per press release. AI handles drafting, you handle tone and strategy.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$1K–$8K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#006</div>
+      <div class="idea-title">Book & eBook Writing</div>
+      <div class="idea-desc">Write nonfiction books for entrepreneurs and coaches using AI. Charge $3K–$20K per book project.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$3K–$20K/book</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+  </div>
+
+  <div class="cat-header silver">
+    <div class="cat-icon silver">🎨</div>
+    <div class="cat-info">
+      <h3>AI Design & Visual Services</h3>
+      <p>Create stunning visuals in minutes using Midjourney, DALL-E, Stable Diffusion</p>
+    </div>
+    <div class="cat-earn">
+      <div class="cat-earn-val silver">$40–$200/hr</div>
+      <div class="cat-earn-label">typical rate</div>
+    </div>
+  </div>
+  <div class="ideas-grid">
+    <div class="idea-card silver">
+      <div class="idea-num">#007</div>
+      <div class="idea-title">Logo & Brand Design</div>
+      <div class="idea-desc">Use AI to generate logo concepts, then refine in Figma/Photoshop. Charge $300–$2K per brand package.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$3K–$12K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#008</div>
+      <div class="idea-title">Social Media Graphics</div>
+      <div class="idea-desc">Create scroll-stopping social posts for brands. AI generates concepts, you package and deliver.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$500–$3K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#009</div>
+      <div class="idea-title">Book Cover Design</div>
+      <div class="idea-desc">Self-publishing authors need covers urgently. AI generates beautiful covers in minutes. Charge $100–$500.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$2K–$8K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#010</div>
+      <div class="idea-title">AI Portrait Photography</div>
+      <div class="idea-desc">Use tools like Aragon AI to create professional headshots from selfies. Charge $50–$150 per set.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$2K–$10K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#011</div>
+      <div class="idea-title">Presentation Design</div>
+      <div class="idea-desc">Build stunning pitch decks and presentations with AI tools like Gamma.app. $500–$3K per deck.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$3K–$15K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#012</div>
+      <div class="idea-title">Merchandise Design</div>
+      <div class="idea-desc">Design t-shirts, mugs, and merch using AI. Sell designs to print-on-demand shops or directly.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$1K–$6K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+  </div>
+
+  <div class="cat-header blue">
+    <div class="cat-icon blue">💻</div>
+    <div class="cat-info">
+      <h3>AI Coding & Development</h3>
+      <p>Build apps and websites 10x faster with AI coding assistants</p>
+    </div>
+    <div class="cat-earn">
+      <div class="cat-earn-val blue">$80–$500/hr</div>
+      <div class="cat-earn-label">typical rate</div>
+    </div>
+  </div>
+  <div class="ideas-grid">
+    <div class="idea-card blue">
+      <div class="idea-num">#013</div>
+      <div class="idea-title">Website Development</div>
+      <div class="idea-desc">Build client websites using AI coding tools like Cursor, GitHub Copilot. Deliver in days, charge for weeks.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$2K–$15K/project</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#014</div>
+      <div class="idea-title">Chatbot Development</div>
+      <div class="idea-desc">Build custom AI chatbots for businesses using no-code tools or APIs. Charge setup + monthly retainer.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$1K–$10K setup</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#015</div>
+      <div class="idea-title">Automation Scripts</div>
+      <div class="idea-desc">Use AI to write Python/JS scripts that automate business tasks. Sell on marketplaces or direct to clients.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$200–$2K/script</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#016</div>
+      <div class="idea-title">Chrome Extension Dev</div>
+      <div class="idea-desc">Build simple Chrome extensions with AI-generated code. Sell on the Chrome Web Store or direct.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$500–$5K/extension</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#017</div>
+      <div class="idea-title">API Integration Services</div>
+      <div class="idea-desc">Connect business tools using Zapier, Make, or custom code. AI writes the integration logic for you.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$1K–$8K/project</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#018</div>
+      <div class="idea-title">No-Code App Builder</div>
+      <div class="idea-desc">Use Bubble, Webflow, or Glide with AI to build apps for clients who can't code.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$2K–$20K/app</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- CONTENT -->
+<div class="sec" id="content">
+  <div class="sec-label purple">02 — content & media</div>
+  <h2 class="sec-title">AI Content Empire</h2>
+  <p class="sec-sub">Build audiences and monetize content using AI to produce at scale — YouTube, podcasts, newsletters, courses.</p>
+
+  <div class="cat-header purple">
+    <div class="cat-icon purple">🎬</div>
+    <div class="cat-info">
+      <h3>YouTube & Video</h3>
+      <p>Faceless channels, AI voiceovers, automated editing</p>
+    </div>
+    <div class="cat-earn">
+      <div class="cat-earn-val purple">$1K–$50K/mo</div>
+      <div class="cat-earn-label">top creators earn</div>
+    </div>
+  </div>
+  <div class="ideas-grid">
+    <div class="idea-card purple">
+      <div class="idea-num">#019</div>
+      <div class="idea-title">Faceless YouTube Channel</div>
+      <div class="idea-desc">Use AI scripts + ElevenLabs voice + stock footage. Topics: finance, history, motivational. No camera needed.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$2K–$20K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#020</div>
+      <div class="idea-title">AI Explainer Videos</div>
+      <div class="idea-desc">Use Synthesia or HeyGen to create AI avatar explainer videos for businesses. Charge per video or retainer.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$500–$5K/video</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#021</div>
+      <div class="idea-title">YouTube Shorts Factory</div>
+      <div class="idea-desc">Repurpose long content into Shorts using AI clipping tools. Run 3–5 channels simultaneously.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$1K–$8K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#022</div>
+      <div class="idea-title">Podcast Production Service</div>
+      <div class="idea-desc">Use AI to transcribe, edit, write show notes, and create clips. Charge $300–$1K per episode.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$3K–$12K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#023</div>
+      <div class="idea-title">TikTok AI Content</div>
+      <div class="idea-desc">Post AI-generated motivational, educational, or entertainment TikToks. Monetize via TikTok Shop + brand deals.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$1K–$15K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#024</div>
+      <div class="idea-title">AI News Channel</div>
+      <div class="idea-desc">Auto-generate daily news summaries using AI. Publish on YouTube, podcast, and newsletter simultaneously.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$2K–$10K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+  </div>
+
+  <div class="cat-header gold">
+    <div class="cat-icon gold">📧</div>
+    <div class="cat-info">
+      <h3>Newsletters & Blogs</h3>
+      <p>Build owned audiences with AI-powered written content</p>
+    </div>
+    <div class="cat-earn">
+      <div class="cat-earn-val gold">$500–$100K/mo</div>
+      <div class="cat-earn-label">top newsletters earn</div>
+    </div>
+  </div>
+  <div class="ideas-grid">
+    <div class="idea-card gold">
+      <div class="idea-num">#025</div>
+      <div class="idea-title">AI Newsletter</div>
+      <div class="idea-desc">Curate and summarize AI news weekly using AI tools. Monetize with sponsorships at $1K–$10K per issue.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$2K–$30K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#026</div>
+      <div class="idea-title">Niche Authority Blog</div>
+      <div class="idea-desc">Use AI to publish 20+ SEO articles/month in a profitable niche. Monetize with ads + affiliate links.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$1K–$20K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#027</div>
+      <div class="idea-title">Paid Substack</div>
+      <div class="idea-desc">Write premium analysis in finance, tech, or health using AI research tools. Charge $10–$50/month.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$3K–$25K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#028</div>
+      <div class="idea-title">AI Deal Newsletter</div>
+      <div class="idea-desc">Curate daily deals, discounts, or opportunities in a niche. Use AI to find and format content automatically.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$1K–$10K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- PRODUCTS -->
+<div class="sec" id="products">
+  <div class="sec-label gold">03 — digital products</div>
+  <h2 class="sec-title">Sell Once, Earn Forever</h2>
+  <p class="sec-sub">Create digital products with AI and sell them on autopilot — eBooks, templates, courses, prompts, and more.</p>
+
+  <div class="ideas-grid">
+    <div class="idea-card gold">
+      <div class="idea-num">#029</div>
+      <div class="idea-title">Sell Prompt Packs</div>
+      <div class="idea-desc">Bundle 50–200 powerful AI prompts for a specific niche. Sell on Gumroad or Etsy for $10–$97 each.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$500–$5K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#030</div>
+      <div class="idea-title">eBooks & Guides</div>
+      <div class="idea-desc">Write in-depth guides on hot topics using AI in hours. Sell for $17–$97 on Gumroad or Amazon KDP.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$1K–$10K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#031</div>
+      <div class="idea-title">Notion Templates</div>
+      <div class="idea-desc">Build AI-powered Notion templates for productivity, business, or finance. Sell for $15–$99 each.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$500–$8K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#032</div>
+      <div class="idea-title">Online Courses</div>
+      <div class="idea-desc">Teach others to use AI tools. Use AI to build the curriculum, slides, and video scripts. Charge $97–$997.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$3K–$50K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#033</div>
+      <div class="idea-title">Canva Templates</div>
+      <div class="idea-desc">Design professional Canva templates with AI assistance. Sell packs on Creative Market or Etsy.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$500–$5K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#034</div>
+      <div class="idea-title">Stock Art Packs</div>
+      <div class="idea-desc">Generate unique AI art packs for specific niches — nature, sci-fi, business. Sell on Creative Market.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$500–$3K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#035</div>
+      <div class="idea-title">AI Workflow Templates</div>
+      <div class="idea-desc">Pre-built Make.com or Zapier automation workflows. Sell to businesses for $50–$500 each.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$1K–$8K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#036</div>
+      <div class="idea-title">GPT Custom Assistants</div>
+      <div class="idea-desc">Build specialized GPT assistants for specific professions. Sell access via a monthly subscription.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$1K–$15K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#037</div>
+      <div class="idea-title">Print-on-Demand Shop</div>
+      <div class="idea-desc">Generate hundreds of AI designs, upload to Printful/Redbubble. Fully passive once set up.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$500–$8K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#038</div>
+      <div class="idea-title">Children's Books</div>
+      <div class="idea-desc">Write and illustrate children's books entirely with AI. Publish on Amazon KDP for passive royalties.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$500–$5K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#039</div>
+      <div class="idea-title">Resume & CV Templates</div>
+      <div class="idea-desc">Use AI to design stunning resume templates and an AI resume writer tool. Sell subscriptions.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$1K–$10K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#040</div>
+      <div class="idea-title">AI Photography Presets</div>
+      <div class="idea-desc">Use AI to generate Lightroom or Capture One presets that mimic popular aesthetics. Sell packs for $30–$100.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$500–$4K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- SAAS -->
+<div class="sec" id="saas">
+  <div class="sec-label blue">04 — saas & tools</div>
+  <h2 class="sec-title">Build AI-Powered Products</h2>
+  <p class="sec-sub">The highest-ceiling opportunity — build software tools powered by AI and charge monthly subscriptions.</p>
+
+  <div class="mega-wrap">
+    <table class="mega-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Idea</th>
+          <th>What It Does</th>
+          <th>Revenue Model</th>
+          <th>Potential</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#041</span></td>
+          <td><div class="t-name">AI Writing Assistant</div><span class="t-badge b-blue">SaaS</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Niche writing tool for lawyers, doctors, marketers</td>
+          <td style="font-size:12px;color:var(--silver2)">$29–$99/mo subscription</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$5K–$100K/mo</td>
+          <td><span class="t-badge b-gold">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#042</span></td>
+          <td><div class="t-name">AI SEO Tool</div><span class="t-badge b-green">Growing</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Keyword research, content briefs, on-page optimization</td>
+          <td style="font-size:12px;color:var(--silver2)">$49–$299/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$10K–$200K/mo</td>
+          <td><span class="t-badge b-purple">Hard</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#043</span></td>
+          <td><div class="t-name">AI Social Media Scheduler</div><span class="t-badge b-blue">SaaS</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Auto-generate and schedule posts across platforms</td>
+          <td style="font-size:12px;color:var(--silver2)">$19–$79/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$5K–$80K/mo</td>
+          <td><span class="t-badge b-gold">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#044</span></td>
+          <td><div class="t-name">AI Customer Support Bot</div><span class="t-badge b-green">In Demand</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Train on company docs, handle support tickets 24/7</td>
+          <td style="font-size:12px;color:var(--silver2)">$99–$999/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$10K–$500K/mo</td>
+          <td><span class="t-badge b-gold">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#045</span></td>
+          <td><div class="t-name">AI Resume Builder</div><span class="t-badge b-blue">B2C</span></td>
+          <td style="font-size:12px;color:var(--silver2)">AI-optimized resumes tailored to job descriptions</td>
+          <td style="font-size:12px;color:var(--silver2)">$9–$49/mo or per-use</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$5K–$100K/mo</td>
+          <td><span class="t-badge b-gold">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#046</span></td>
+          <td><div class="t-name">AI Legal Doc Generator</div><span class="t-badge b-green">High Value</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Generate contracts, NDAs, terms of service instantly</td>
+          <td style="font-size:12px;color:var(--silver2)">$29–$199/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$10K–$200K/mo</td>
+          <td><span class="t-badge b-purple">Hard</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#047</span></td>
+          <td><div class="t-name">AI Meeting Summarizer</div><span class="t-badge b-blue">B2B</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Transcribe and summarize Zoom/Teams calls automatically</td>
+          <td style="font-size:12px;color:var(--silver2)">$15–$49/user/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$5K–$150K/mo</td>
+          <td><span class="t-badge b-gold">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#048</span></td>
+          <td><div class="t-name">AI Tutoring Platform</div><span class="t-badge b-green">EdTech</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Personalized AI tutor for students in any subject</td>
+          <td style="font-size:12px;color:var(--silver2)">$19–$79/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$10K–$500K/mo</td>
+          <td><span class="t-badge b-purple">Hard</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#049</span></td>
+          <td><div class="t-name">AI Cold Email Tool</div><span class="t-badge b-green">In Demand</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Personalized outreach emails at scale using AI research</td>
+          <td style="font-size:12px;color:var(--silver2)">$49–$299/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$10K–$200K/mo</td>
+          <td><span class="t-badge b-gold">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span style="font-family:var(--mono);font-size:11px;color:var(--muted)">#050</span></td>
+          <td><div class="t-name">AI Data Analyst</div><span class="t-badge b-blue">B2B</span></td>
+          <td style="font-size:12px;color:var(--silver2)">Ask questions about your data in plain English, get charts</td>
+          <td style="font-size:12px;color:var(--silver2)">$99–$999/mo</td>
+          <td style="font-size:13px;font-weight:600;color:var(--gold)">$20K–$1M/mo</td>
+          <td><span class="t-badge b-purple">Hard</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- AGENCY -->
+<div class="sec" id="agency">
+  <div class="sec-label silver">05 — agency models</div>
+  <h2 class="sec-title">The AI Agency Playbook</h2>
+  <p class="sec-sub">Run a lean agency of 1–3 people and deliver enterprise-level results using AI. The highest-paying service model.</p>
+
+  <div class="ideas-grid">
+    <div class="idea-card silver">
+      <div class="idea-num">#051</div>
+      <div class="idea-title">AI Marketing Agency</div>
+      <div class="idea-desc">Full-service marketing — ads, copy, content, strategy — all AI-powered. Charge $3K–$15K/mo retainer.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$10K–$100K/mo</span><span class="idea-diff diff-hard">Hard</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#052</div>
+      <div class="idea-title">AI Video Production Agency</div>
+      <div class="idea-desc">Produce ads, explainers, and social videos using AI tools. Charge $2K–$20K per production.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$10K–$80K/mo</span><span class="idea-diff diff-hard">Hard</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#053</div>
+      <div class="idea-title">AI Automation Agency (AAA)</div>
+      <div class="idea-desc">The hottest agency model — automate business workflows with AI. Charge $5K–$30K per automation project.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$20K–$200K/mo</span><span class="idea-diff diff-hard">Hard</span></div>
+    </div>
+    <div class="idea-card silver">
+      <div class="idea-num">#054</div>
+      <div class="idea-title">AI Lead Generation Agency</div>
+      <div class="idea-desc">Use AI to find, qualify, and reach out to leads for B2B clients. Charge per lead or on retainer.</div>
+      <div class="idea-footer"><span class="idea-earn silver">$5K–$50K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#055</div>
+      <div class="idea-title">AI SEO Agency</div>
+      <div class="idea-desc">Use AI to produce 50+ articles/month for clients. Charge $2K–$10K/mo for content + strategy.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$10K–$100K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#056</div>
+      <div class="idea-title">AI Consulting</div>
+      <div class="idea-desc">Help businesses implement AI in their operations. Charge $5K–$50K for strategy + implementation projects.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$20K–$200K/mo</span><span class="idea-diff diff-hard">Hard</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- PASSIVE -->
+<div class="sec" id="passive">
+  <div class="sec-label purple">06 — passive income</div>
+  <h2 class="sec-title">Earn While You Sleep</h2>
+  <p class="sec-sub">Set it up once, earn forever — AI-powered passive income streams that compound over time.</p>
+
+  <div class="ideas-grid">
+    <div class="idea-card purple">
+      <div class="idea-num">#057</div>
+      <div class="idea-title">Amazon KDP Publishing</div>
+      <div class="idea-desc">Publish low-content books (journals, planners) and nonfiction guides on Amazon using AI. Fully passive.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$500–$10K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#058</div>
+      <div class="idea-title">Affiliate Blog Network</div>
+      <div class="idea-desc">Build 3–5 niche blogs using AI content. Monetize with Amazon Associates, SaaS affiliates at 30–50% commission.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$2K–$30K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card purple">
+      <div class="idea-num">#059</div>
+      <div class="idea-title">AI Stock Music</div>
+      <div class="idea-desc">Use Suno or Udio to generate music tracks, sell licenses on AudioJungle, Pond5, and Spotify.</div>
+      <div class="idea-footer"><span class="idea-earn purple">$500–$5K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#060</div>
+      <div class="idea-title">AI Stock Photos</div>
+      <div class="idea-desc">Upload AI-generated images to Shutterstock, Adobe Stock, Getty. Earn per download passively.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$300–$3K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+    <div class="idea-card blue">
+      <div class="idea-num">#061</div>
+      <div class="idea-title">Micro-SaaS Tools</div>
+      <div class="idea-desc">Build tiny, focused AI tools (word counter, headline analyzer, grammar checker) and charge $5–$20/mo.</div>
+      <div class="idea-footer"><span class="idea-earn blue">$1K–$20K/mo</span><span class="idea-diff diff-med">Medium</span></div>
+    </div>
+    <div class="idea-card gold">
+      <div class="idea-num">#062</div>
+      <div class="idea-title">AI Course on Udemy</div>
+      <div class="idea-desc">Record an AI tools course with AI-generated slides and script. Earn royalties from Udemy's 50M+ students.</div>
+      <div class="idea-footer"><span class="idea-earn gold">$500–$8K/mo</span><span class="idea-diff diff-easy">Easy</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="div-line"/>
+
+<!-- STATS -->
+<div class="sec">
+  <div class="sec-label gold">07 — by the numbers</div>
+  <h2 class="sec-title">The AI Economy</h2>
+  <div class="quote-grid">
+    <div class="quote-card gold">
+      <div class="quote-num gold">$1.8T</div>
+      <div class="quote-text">The projected global AI market size by 2030. <strong>Every dollar of that is an opportunity</strong> for builders, creators, and entrepreneurs.</div>
+    </div>
+    <div class="quote-card silver">
+      <div class="quote-num silver">97M</div>
+      <div class="quote-text">New jobs expected to be <strong>created by AI</strong> by 2025. The future isn't job destruction — it's transformation.</div>
+    </div>
+    <div class="quote-card purple">
+      <div class="quote-num purple">80%</div>
+      <div class="quote-text">Of tasks in the average knowledge worker's job <strong>can be assisted or automated</strong> with today's AI tools.</div>
+    </div>
+    <div class="quote-card blue">
+      <div class="quote-num blue">10x</div>
+      <div class="quote-text">The productivity multiplier for solo entrepreneurs using AI. <strong>One person can now do the work of a team</strong> of ten.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">💰 AI Money Machine</div>
+  <p>62+ strategies to make money with AI · Updated 2025 · The future belongs to those who build with AI</p>
+</footer>
+
+</body>
+                                  </html>
